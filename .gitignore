@@ -5,5 +5,4 @@ CMakeFiles/
 *.so
 *.a
 demo
-*.log
-.clion.source.upload.marker
+*.log.clion.source.upload.marker
