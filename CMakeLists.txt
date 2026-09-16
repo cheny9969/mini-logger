@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.28.3)
+# 同时支持C + CXX
+project(mini_logger C CXX)
+
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 头文件搜索路径
+include_directories(src src/c_core src/cpp_wrapper)
+
+# ASAN 调试选项，Release时注释这两行
+add_compile_options(-fsanitize=address -g -O1)
+add_link_options(-fsanitize=address)
+
+# 只放 .c .cpp，去掉所有 .h .hpp
+add_executable(mini_logger
+        example/main.cpp
+        src/c_core/mempool.c
+        src/c_core/ringbuffer.c
+        src/cpp_wrapper/logger.cpp
+)
+
+# 链接线程库
+target_link_libraries(mini_logger pthread)
