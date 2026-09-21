@@ -6,6 +6,9 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# 导出compile_commands.json，给clangd读取编译参数【关键新增行】
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
+
 # 头文件搜索路径
 include_directories(src src/c_core src/cpp_wrapper)
 
