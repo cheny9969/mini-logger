@@ -22,6 +22,14 @@ add_executable(mini_logger
         src/c_core/mempool.c
         src/c_core/ringbuffer.c
         src/cpp_wrapper/logger.cpp
+        "Demo(learn)/demo_offsetof.c"
+        "Demo(learn)/demo_mempool_single.c"
+        "Demo(learn)/demo_mempool_threadsafe.c"
+        "Demo(learn)/demo_thread_exit.cpp"
+        "Demo(learn)/opaque_demo/opaque_demo.c"
+        "Demo(learn)/opaque_demo/opaque_demo.h"
+        "Demo(learn)/opaque_demo/main.cpp"
+        "Demo(learn)/demo_atomic.c"
 )
 
 # 链接线程库
