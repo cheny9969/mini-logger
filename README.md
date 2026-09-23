@@ -22,6 +22,7 @@ mini-logger
 ├── src/cpp_wrapper   # C++17 上层封装
 │   └── logger        # RAII 日志管理、后台消费线程、对外日志接口
 └── example           # 多线程压测 demo
+└── Demo(learn)       # 学习使用的 demo
 ```
 
 ### 数据流
