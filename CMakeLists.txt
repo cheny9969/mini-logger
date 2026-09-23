@@ -30,6 +30,10 @@ add_executable(mini_logger
         "Demo(learn)/opaque_demo/opaque_demo.h"
         "Demo(learn)/opaque_demo/main.cpp"
         "Demo(learn)/demo_atomic.c"
+        "Demo(learn)/demo_test_rb.c"
+        "Demo(learn)/atomic_playground.c"
+        "Demo(learn)/safe_publish_demo.c"
+        "Demo(learn)/demo_fun.c"
 )
 
 # 链接线程库

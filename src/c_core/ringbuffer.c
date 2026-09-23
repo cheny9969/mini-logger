@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <stdatomic.h>
 
-// clang‑d stdatomic.h宏展开假警告，仅本文件生效
-#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
 
 struct RingBuffer {
     _Atomic uint32_t head;  // 生产者写入位置，多生产者修改

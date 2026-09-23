@@ -20,6 +20,20 @@ typedef struct MemPool {
 } MemPool;
 
 MemPool* mempool_create(void) {
+    //%zu专门用于打印 size_t 类型，无符号整数
+    /*
+     * size_t、ssize_t、uintptr_t 全部是标准库头文件 typedef 出来，定义在 <stddef.h> 、<stdint.h>
+     * 64位Linux下实际大致是这样： typedef unsigned long size_t;
+     * 平台	               size_t 实际等价于
+     * 32 位系统	            unsigned int（4 字节）
+     * 64 位Linux	        unsigned long（8 字节）
+     * 64 位Windows MSVC    unsigned __int64
+     * 类型	              格式符
+     * size_t	          %zu,sizeof/offsetof 返回值
+     * ssize_t(有符号)	  %zd,size，read/write 返回
+     * uint64_t	          %"PRIu64"（需要<inttypes.h>）
+     */
+    printf("pthread_mutex_t size :%zu\n",sizeof(pthread_mutex_t));
     void* mem = malloc(sizeof(Block) * BLOCK_CNT);
     if (mem == NULL) return NULL;
 
